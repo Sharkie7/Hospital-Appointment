@@ -5,11 +5,14 @@ import { MainCont, SignIn, Welcome, SignInText, Error } from "./LandingPage.styl
 import InputBoxes from "../../Components/InputBoxes/InputBoxes";
 import { connect } from "react-redux";
 import { Login } from "../../redux/actions/userActions";
+import root from 'react-shadow'
 
 function LandingPage(props) {
   const history = useHistory();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+
+  const [color, setColor] = useState('red')
 
   const handleHospitalLoginClick = () => {
     history.push("/login/hospital");
@@ -35,9 +38,28 @@ function LandingPage(props) {
       });
   };
 
+
+  const handleClick = () => {
+    console.log('working')
+
+    setColor((prevColor) => {
+      if(prevColor === 'red') {
+        return 'green'
+      } else {
+        return 'red'
+      }
+    })
+  }
+
   return (
     <div style={{ width: "100%" }}>
       <Header buttonText="Hospital Login" onButtonClick={handleHospitalLoginClick} />
+      {/* <root.div>
+        <div style={{width: 250, height: 200, background: color}}>
+          <h1>Test Test Test</h1>
+          <button onClick={handleClick}>Click Me</button>
+        </div>
+      </root.div> */}
       <MainCont>
         <SignIn>
           <Welcome>Welcome</Welcome>
