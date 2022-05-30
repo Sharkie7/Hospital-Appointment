@@ -57,6 +57,7 @@ function PatientHomePage(props) {
   };
 
   const handleCardClick = (slotData) => {
+      let data = slotData.data.filter(i => i.x === '1')
     setOpen(true);
     setSelectedSlot(slotData);
   };
