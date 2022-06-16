@@ -8,7 +8,13 @@ function Navbar({ Logout }) {
   const history = useHistory();
   const [hover, setHover] = useState(false);
   const pathname = history.location.pathname;
-  console.log(pathname);
+
+  const onClick = () => {
+    window.zipy.identify("test", {
+      firstName: "John",
+      lastName: "Doe"
+   });
+  }
 
   return (
     <NavbarMain>
@@ -20,7 +26,7 @@ function Navbar({ Logout }) {
           Your Bookings
         </ListItem>
         <ListItem>Settings</ListItem>
-        <ListItem>Contact</ListItem>
+        <ListItem onClick={onClick}>Contact</ListItem>
         <ListItem onClick={() => Logout()}>Sign Out</ListItem>
       </List>
     </NavbarMain>
