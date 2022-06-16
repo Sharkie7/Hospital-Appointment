@@ -10,10 +10,10 @@ function Navbar({ Logout }) {
   const pathname = history.location.pathname;
 
   const onClick = () => {
-    window.zipy.identify("test", {
-      firstName: "John",
-      lastName: "Doe"
-   });
+  //   window.zipy.identify("test", {
+  //     firstName: "John",
+  //     lastName: "Doe"
+  //  });
   }
 
   return (
